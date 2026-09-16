@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recap Studio MM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">▶</span><span>Recap Studio <b>MM</b></span></div>
+    <button class="login">ဝင်ရောက်ရန်</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">AI VIDEO RECAP STUDIO</div>
+      <h1>ဗီဒီယိုကို<br><span>Recap Video</span> အဖြစ်ပြောင်းပါ</h1>
+      <p>Video တင်ပါ → AI နဲ့ အကြောင်းအရာခွဲခြမ်း → Script / Subtitle / Voice အတွက် ပြင်ဆင်ပါ။</p>
+
+      <label class="upload-box" for="videoInput">
+        <div class="upload-icon">↑</div>
+        <h2>Video တင်ရန်</h2>
+        <p>MP4, MOV, WebM · ဖိုင်ကို ဒီနေရာသို့ ဆွဲချနိုင်သည်</p>
+        <span class="upload-btn">Video ရွေးမည်</span>
+        <input id="videoInput" type="file" accept="video/*" hidden>
+      </label>
+    </section>
+
+    <section class="workspace hidden" id="workspace">
+      <div class="video-card">
+        <video id="preview" controls></video>
+        <div class="file-info" id="fileInfo"></div>
+      </div>
+
+      <div class="panel">
+        <h2>AI Recap Project</h2>
+        <label>Recap Language</label>
+        <select id="language">
+          <option>မြန်မာ</option>
+          <option>English</option>
+          <option>ไทย</option>
+        </select>
+
+        <label>Video Style</label>
+        <select id="style">
+          <option>Movie Recap</option>
+          <option>TikTok Short</option>
+          <option>Story Summary</option>
+          <option>News Style</option>
+        </select>
+
+        <label>Recap Length</label>
+        <select id="length">
+          <option>1 မိနစ်</option>
+          <option selected>3 မိနစ်</option>
+          <option>5 မိနစ်</option>
+          <option>10 မိနစ်</option>
+        </select>
+
+        <button class="primary" id="analyzeBtn">✨ AI Recap စတင်မည်</button>
+        <div class="progress hidden" id="progress">
+          <div class="spinner"></div>
+          <span>Video ကို ခွဲခြမ်းနေသည်...</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="result hidden" id="result">
+      <div class="result-head">
+        <div>
+          <div class="badge">AI RESULT</div>
+          <h2>Recap Project</h2>
+        </div>
+        <button class="secondary" id="newBtn">+ Video အသစ်</button>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-card">
+          <h3>📝 Recap Script</h3>
+          <textarea id="script">AI analysis ပြီးသွားသောအခါ Recap Script ကို ဒီနေရာတွင် ပြပါမည်။</textarea>
+        </div>
+        <div class="result-card">
+          <h3>🎙️ Voice & Subtitle</h3>
+          <div class="option">မြန်မာ AI Voice <span>ရွေးရန် ›</span></div>
+          <div class="option">Auto Subtitle <span>ဖွင့်ထားသည် ✓</span></div>
+          <button class="primary" id="exportBtn">🎬 Export Recap Video</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Recap Studio MM · Your own AI video workspace</footer>
+  <script src="script.js"></script>
+</body>
+</html>
